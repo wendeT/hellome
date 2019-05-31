@@ -38,9 +38,7 @@ def train_f():
 		epoch += 1
 		print 'epoch %d ' % (epoch)
 		for i in range(len(data_y)):
-			temp = adder_f(i)
-			temp = activater_f(temp)
-			model_y[i] = temp
+			model_y[i] = activater_f(adder_f(i))
 			if  model_y[i] == data_y[i]:
 				flag += 1
 			else:
